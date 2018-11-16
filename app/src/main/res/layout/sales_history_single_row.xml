@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:contentPadding="2dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardBackgroundColor="#fff"
+    android:layout_margin="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/bill_no_sales_history_card"
+                android:text="Bill No: 112233"
+                android:textSize="15sp"
+                android:padding="5dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/bill_date_sales_history_card"
+                android:text="12/11/2011"
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:gravity="end"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_price_sales_history_card"
+            android:text="Total price : 5000/-"
+            android:textSize="15sp"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

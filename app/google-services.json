@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "701098270378",
+    "firebase_url": "https://hypercart-97533.firebaseio.com",
+    "project_id": "hypercart-97533",
+    "storage_bucket": "hypercart-97533.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701098270378:android:6cd1ead463affc30",
+        "android_client_info": {
+          "package_name": "hypercard.gigaappz.com.hypercart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701098270378-1naonpvretl02bhs2aaiq5u2lfdjvh3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN9xJ4Uj8TBp3ODrMU2_-EqHfI9vsL9rg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

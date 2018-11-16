@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:contentPadding="2dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardBackgroundColor="#9ad7d0"
+    android:layout_margin="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_view_stock_card"
+            android:text="item : chilly powder"
+            android:textSize="15sp"
+            android:padding="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/company_view_stock_card"
+            android:text="item company : saras"
+            android:textSize="15sp"
+            android:padding="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantity_view_stock_card"
+            android:text="item quantity : 1kg"
+            android:textSize="15sp"
+            android:padding="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/mrp_view_stock_card"
+                android:text="MRP : 100/-"
+                android:textSize="15sp"
+                android:padding="5dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/price_view_stock_card"
+                android:text="Price : 75/-"
+                android:textSize="15sp"
+                android:padding="5dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
