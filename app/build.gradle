@@ -60,6 +60,7 @@ dependencies {
     compile 'com.github.MdFarhanRaja:SearchableSpinner:1.9'
     compile 'com.kaopiz:kprogresshud:1.2.0'
     compile 'com.scottyab:aescrypt:0.0.1'
+    compile 'com.android.support:support-v4:27.+'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
