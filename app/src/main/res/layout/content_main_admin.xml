@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyish"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="hypercard.gigaappz.com.hypercart.MainScreen1"
+    tools:showIn="@layout/app_bar_admin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/icon_group"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true">
+            <RelativeLayout
+                android:id="@+id/shops"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/market_text"
+                    android:text="Shops"
+                    android:textSize="12sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000"
+                    android:drawableTop="@drawable/shop"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/users"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/news_text"
+                    android:text="Users"
+                    android:textSize="12sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000"
+                    android:drawableTop="@drawable/user"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/pending"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/user_text"
+                    android:text="Requests"
+                    android:textSize="12sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000"
+                    android:drawableTop="@drawable/pending"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/icon_group">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar1"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/app_title_text1"
+                    android:text="HyperCart"
+                    android:textSize="20sp"
+                    android:gravity="start"
+                    android:foregroundGravity="left"
+                    android:textColor="@color/textColorWhite"/>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

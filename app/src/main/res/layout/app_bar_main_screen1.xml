@@ -30,7 +30,7 @@
             android:background="@color/white"/>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main_screen1" />
+    <include layout="@layout/content_main_user" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -28,7 +28,6 @@ public class AdminActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         recyclerView    = findViewById(R.id.recycler_admin_activity);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
