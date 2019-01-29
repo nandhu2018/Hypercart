@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hypercard.gigaappz.com.hypercart.MainScreen1">
+    tools:context="hypercard.gigaappz.com.hypercart.user.MainScreen1">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,6 +21,7 @@
             android:id="@+id/locationview"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:editable="false"
             android:text="location"
             android:gravity="center"
             android:layout_margin="5dp"

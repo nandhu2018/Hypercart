@@ -4,9 +4,9 @@
     android:id="@+id/viewContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration">
+    tools:context=".registration.Registration">
 
-    <hypercard.gigaappz.com.hypercart.MyViewPager
+    <hypercard.gigaappz.com.hypercart.registration.MyViewPager
         android:id="@+id/viewPagerVertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -169,7 +169,7 @@
 
         </LinearLayout>
 
-    </hypercard.gigaappz.com.hypercart.MyViewPager>
+    </hypercard.gigaappz.com.hypercart.registration.MyViewPager>
 
 
     <ProgressBar

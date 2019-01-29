@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/add_stock"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/stock"
             android:title="Add Stock" />
         <item
             android:id="@+id/view_stock"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/stock1"
             android:title="View Stock" />
         <item
             android:id="@+id/sale_history"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/purchases"
             android:title="Sales History" />
         <!--<item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />-->
-    </group>
 
     <!--<item android:title="Communicate">
         <menu>

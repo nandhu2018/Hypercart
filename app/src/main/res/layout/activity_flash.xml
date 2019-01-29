@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    tools:context="hypercard.gigaappz.com.hypercart.Flash">
+    tools:context="hypercard.gigaappz.com.hypercart.login.Flash">
     <ImageView
         android:id="@+id/img"
         android:layout_width="100dp"

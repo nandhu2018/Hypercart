@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Shop Name"
+                android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
                 android:padding="15dp"
                 android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
@@ -35,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Shop Place"
+                android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
                 android:padding="15dp"
                 android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
@@ -48,6 +50,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Shop Contact Number"
                 android:padding="15dp"
+                android:inputType="number"
+                android:digits="1234567890"
                 android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
 

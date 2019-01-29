@@ -1,72 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hypercard.gigaappz.com.hypercart.activity.ShopActivity">
-
-    <android.support.design.widget.AppBarLayout
+    android:background="@color/greyish"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".shop.ShopActivity"
+    tools:showIn="@layout/app_bar_shop">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_shop" />
-
-    <!--<android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:visibility="gone"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:navigationContentDescription="@string/abc_action_bar_up_description"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="HyperCart"
+        android:gravity="center"/>
     <LinearLayout
+        android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        android:background="@color/blue"
-        android:layout_gravity="bottom"
+        android:layout_below="@id/toolbar"
+        android:background="@color/white"
         android:weightSum="3">
-        <TextView
+        <LinearLayout
             android:id="@+id/addproduct"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="1dp"
-            android:background="@color/white"
-            android:text="Add Product"
-            android:gravity="center"
-            android:drawableTop="@android:drawable/ic_menu_add"/>
-        <TextView
-            android:id="@+id/sales"
+            android:layout_margin="5dp"
+            android:background="@drawable/background"
+            android:orientation="vertical">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/cart3"
+                android:layout_gravity="center"
+                app:civ_border_color="#8BC34A"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Add Stock"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/viewstock"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:text="Sales"
-            android:layout_margin="1dp"
-            android:gravity="center"
-            android:drawableTop="@android:drawable/ic_dialog_dialer"/>
-        <TextView
-            android:id="@+id/stock"
+            android:background="@drawable/background"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/stock3"
+                app:civ_border_color="#8BC34A"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                android:layout_gravity="center"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="View Stock"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/purchases"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:text="Stock"
-            android:layout_margin="1dp"
-            android:gravity="center"
-            android:drawableTop="@android:drawable/ic_menu_add"/>
-
+            android:layout_margin="5dp"
+            android:background="@drawable/background"
+            android:orientation="vertical">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/pending1"
+                app:civ_border_color="#8BC34A"
+                app:civ_border_width="4dp"
+                android:layout_gravity="center"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Purchases"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
     </LinearLayout>
-</android.support.design.widget.CoordinatorLayout>
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_below="@id/menu"></android.support.v7.widget.RecyclerView>-->
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/white"
+        android:text="Recent Purchases"
+        android:textStyle="bold"
+        android:textColor="@color/textColorBlack"
+        android:padding="5dp"
+        android:textSize="17sp"
+        android:layout_below="@id/menu"/>
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/list"
+    android:layout_below="@id/text"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="hypercard.gigaappz.com.hypercart.shop.ShopActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <include layout="@layout/content_shop" />
+
+
+        &lt;!&ndash;<android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:visibility="gone"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_dialog_email" />&ndash;&gt;
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/blue"
+            android:layout_gravity="bottom"
+            android:weightSum="3">
+            <TextView
+                android:id="@+id/addproduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:background="@color/white"
+                android:text="Add Product"
+                android:gravity="center"
+                android:drawableTop="@android:drawable/ic_menu_add"/>
+            <TextView
+                android:id="@+id/sales"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="Sales"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:drawableTop="@android:drawable/ic_dialog_dialer"/>
+            <TextView
+                android:id="@+id/stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="Stock"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:drawableTop="@android:drawable/ic_menu_add"/>
+
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+    -->

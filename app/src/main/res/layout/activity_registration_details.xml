@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hypercard.gigaappz.com.hypercart.RegistrationDetails">
+    tools:context="hypercard.gigaappz.com.hypercart.registration.RegistrationDetails">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

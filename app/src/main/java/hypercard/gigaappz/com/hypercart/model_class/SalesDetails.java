@@ -5,32 +5,43 @@ package hypercard.gigaappz.com.hypercart.model_class;
  */
 
 public class SalesDetails {
-    private int billNumber;
-    private double totalCost;
-    private String billDate;
+    public String getShopname() {
+        return shopname;
+    }
 
+    public void setShopname(String shopname) {
+        this.shopname = shopname;
+    }
+
+    String shopname;
+     String billNumber;
+     String totalCost;
+     String billDate;
+     String mobile;
     public SalesDetails() {
     }
 
-    public SalesDetails(int billNumber, double totalCost, String billDate) {
+    public SalesDetails(String billNumber, String totalCost, String billDate,String mobile,String shopname) {
         this.billNumber = billNumber;
         this.totalCost = totalCost;
         this.billDate = billDate;
+        this.mobile=mobile;
+        this.shopname=shopname;
     }
 
-    public int getBillNumber() {
+    public String getBillNumber() {
         return billNumber;
     }
 
-    public void setBillNumber(int billNumber) {
+    public void setBillNumber(String billNumber) {
         this.billNumber = billNumber;
     }
 
-    public double getTotalCost() {
+    public String getTotalCost() {
         return totalCost;
     }
 
-    public void setTotalCost(double totalCost) {
+    public void setTotalCost(String totalCost) {
         this.totalCost = totalCost;
     }
 
@@ -40,5 +51,13 @@ public class SalesDetails {
 
     public void setBillDate(String billDate) {
         this.billDate = billDate;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import hypercard.gigaappz.com.hypercart.login.Login;
+import hypercard.gigaappz.com.hypercart.registration.Registration;
+
 public class Mainpage extends AppCompatActivity {
     Button login,register;
     SharedPreferences sharedPreferences;

@@ -4,6 +4,8 @@
     <string name="lbl_name">Name</string>
     <string name="lbl_email">Email</string>
     <string name="lbl_mobile">Mobile</string>
+    <string name="copyright1">The project is done for overcome the difficulties faced during the billing in hypermarket. It will help to make our billing easy by reading the details of the product using the barcode and add the product to the cart. By doing this we can pay the money online and take the product straight to the home without need to waste the time on billing counter. </string>
+    <string name="copyright">Copyright @nandhu</string>
     <string name="lbl_next">NEXT</string>
     <string name="msg_sit_back">Sit back &amp; Relax! while we verify your mobile number</string>
     <string name="msg_manual_otp">(Enter the OTP below in case if we fail to detect the SMS automatically)</string>

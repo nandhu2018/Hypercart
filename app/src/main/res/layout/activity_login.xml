@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".Login">
+    tools:context=".login.Login">
 <!--
     <include
         android:id="@+id/login_toolbar"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789"
+            android:singleLine="true"
             android:hint="Password" />
     </android.support.design.widget.TextInputLayout>
 
@@ -87,9 +87,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Forgot Password?"
-                android:visibility="gone"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="20dp"
+                android:visibility="gone"
                 android:textColor="@color/blue"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="35dp"

@@ -6,6 +6,7 @@
         android:id="@+id/cart"
         android:title="Log Out"
         app:showAsAction="always"
+        app:actionLayout="@layout/custom_action_item_layout"
         android:icon="@drawable/cart"/>
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hypercard.gigaappz.com.hypercart.BarcodeScan">
+    tools:context="hypercard.gigaappz.com.hypercart.buy.BarcodeScan">
 
     <fragment
         android:id="@+id/barcode_fragment"
@@ -16,9 +16,10 @@
         app:use_flash="false" />
 
     <info.androidhive.barcode.ScannerOverlay
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="#44000000"
+        android:layout_centerHorizontal="true"
         app:line_color="#7323DC"
         app:line_speed="6"
         app:line_width="4"
