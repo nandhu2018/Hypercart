@@ -29,7 +29,7 @@
         android:orientation="horizontal"
         android:layout_below="@id/toolbar"
         android:background="@color/white"
-        android:weightSum="3">
+        android:weightSum="4">
         <LinearLayout
             android:id="@+id/addproduct"
             android:layout_width="0dp"
@@ -106,6 +106,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Purchases"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/onlineshop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/background"
+            android:orientation="vertical">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/trackorder"
+                app:civ_border_color="#8BC34A"
+                app:civ_border_width="4dp"
+                android:layout_gravity="center"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Online shopping"
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:layout_margin="10dp"

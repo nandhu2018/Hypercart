@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/dialog_background"
+    android:layout_margin="10dp">
+    <TextView
+        android:id="@+id/product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Wallet"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/quantityneed"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/walletamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:digits="1234567890"
+            android:hint="Enter Amount"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/addtowallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:text="Add to wallet"/>
+
+</LinearLayout>

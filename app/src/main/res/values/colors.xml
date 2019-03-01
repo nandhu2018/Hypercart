@@ -30,4 +30,8 @@
     <color name="textColorGray">#949494</color>
     <color name="positive_indicator">#138c00</color>
     <color name="negative_indicator">#8b0101</color>
+    <color name="div">#d5c5a4</color>
+    <color name="text">#32353e</color>
+    <color name="textred">#ca362c</color>
+    <color name="textwhite">#fff</color>
 </resources>

@@ -21,7 +21,7 @@
         android:orientation="horizontal"
         android:layout_below="@id/imageSlider"
         android:background="@color/white"
-        android:weightSum="4">
+        android:weightSum="5">
         <LinearLayout
             android:id="@+id/search"
             android:layout_width="0dp"
@@ -136,10 +136,40 @@
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/trackorder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/background"
+            android:clickable="true"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/trackorder"
+                app:civ_border_color="#8BC34A"
+                app:civ_border_width="4dp"
+                android:layout_gravity="center"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Track Order"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
     </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/menu"></android.support.v7.widget.RecyclerView>
+        android:layout_below="@id/menu" />
 </RelativeLayout>

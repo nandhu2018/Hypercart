@@ -7,12 +7,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
         android:name=".login.Hypercart"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:persistent="true"
@@ -32,16 +31,19 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".MainScreen"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".registration.RegistrationDetails"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".registration.RegistrationDetails"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".user.MainScreen1"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_main_screen1"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".login.Flash"
+        <activity
+            android:name=".login.Flash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,23 +51,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".buy.BarcodeScan"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".addstock.AddProduct"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".addstock.AddproductBarcode"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payment.WalletPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".buy.BarcodeScan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".addstock.AddProduct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".addstock.AddproductBarcode"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".shop.ShopActivity"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_shop"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".admin.AdminActivity"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_admin"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
 
             <!--
@@ -76,34 +85,42 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".payment.PaymentActivity"
-            android:screenOrientation="portrait"/>
-
-
-        <activity android:name=".shop.Purchaselist"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".shop.PurchasedDetails"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".payment.PaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".shop.Purchaselist"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".shop.PurchasedDetails"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".user.PurchasedDetailsUser"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".user.ShopOnline"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".user.CartView"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".shop.StockList"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Aboutus"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".registration.Forgotpass"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".user.ShopOnline"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".user.CartView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".shop.StockList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Aboutus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".registration.Forgotpass"
+            android:screenOrientation="portrait" />
 
         <!-- Add your API key here -->
         <meta-data
             android:name="com.razorpay.ApiKey"
-
             android:value="rzp_test_dieBYFGgkOYKPP" />
+
+        <activity android:name=".user.WalletActivity" />
+        <activity android:name=".shop.OnlineShopingActivity"></activity>
     </application>
 
 </manifest>
