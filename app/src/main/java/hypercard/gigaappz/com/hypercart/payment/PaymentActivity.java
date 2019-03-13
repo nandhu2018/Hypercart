@@ -28,14 +28,18 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import es.dmoral.toasty.Toasty;
 import hypercard.gigaappz.com.hypercart.R;
+import hypercard.gigaappz.com.hypercart.model_class.Cart;
+import hypercard.gigaappz.com.hypercart.model_class.OnlineOrder;
 import hypercard.gigaappz.com.hypercart.model_class.Product;
 import hypercard.gigaappz.com.hypercart.model_class.SalesDetails;
 import hypercard.gigaappz.com.hypercart.model_class.Wallet;
+import hypercard.gigaappz.com.hypercart.shop.OnlineShopPendingAdapter;
 import hypercard.gigaappz.com.hypercart.user.MainScreen1;
 import hypercard.gigaappz.com.hypercart.user.ShopOnline;
 
@@ -45,8 +49,9 @@ public class PaymentActivity extends Activity implements PaymentResultListener {
     int qtyneed,qtyleft=0;
     private DatabaseReference mFirebaseDatabase,mFirebaseDatabase1,mFirebaseDatabase2,mFirebaseDatabase3,remtemp,myref2,walletref;
     private FirebaseDatabase mFirebaseInstance;
-    DatabaseReference ordershop;
+    DatabaseReference ordershop,userdetailref;
     ArrayList<String> barcodelist,qtylist;
+    List<Product> list = new ArrayList<Product>();
     int walletbal;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -148,8 +153,13 @@ public class PaymentActivity extends Activity implements PaymentResultListener {
     public void onPaymentSuccess(String razorpayPaymentID) {
         try {
             Toast.makeText(this, "Payment Successful: " + razorpayPaymentID, Toast.LENGTH_SHORT).show();
+
             shopsale(razorpayPaymentID);
             usersale(razorpayPaymentID);
+            userdetailref = mFirebaseInstance.getReference("userdetails").child(getIntent().getStringExtra("shop")).child(getIntent().getStringExtra("mobile"));
+            Map<String, Object> updates = new HashMap<>();
+            updates.put("status", "success");
+            userdetailref.updateChildren(updates);
         } catch (Exception e) {
             Log.e(TAG, "Exception in onPaymentSuccess", e);
             startActivity(new Intent(PaymentActivity.this,MainScreen1.class));
@@ -181,7 +191,7 @@ public class PaymentActivity extends Activity implements PaymentResultListener {
         // by implementing firebase auth
        // Long tsLong = System.currentTimeMillis()/1000;
         String timeStamp = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
-         SalesDetails product = new SalesDetails(bill, getIntent().getStringExtra("price"),getIntent().getStringExtra("date"),getIntent().getStringExtra("mobile"),getIntent().getStringExtra("shopname"));
+        SalesDetails product = new SalesDetails(bill, getIntent().getStringExtra("price"),getIntent().getStringExtra("date"),getIntent().getStringExtra("mobile"),getIntent().getStringExtra("shopname"));
 
         mFirebaseDatabase.child(timeStamp).setValue(product);
 
@@ -206,26 +216,34 @@ public class PaymentActivity extends Activity implements PaymentResultListener {
             final int pos=i;
             qtyleft=0;
             qtyneed=Integer.parseInt(qtylist.get(i));
-            mFirebaseDatabase3=mFirebaseInstance.getReference("product").child(getIntent().getStringExtra("shop"));
-            mFirebaseDatabase3.child(barcodelist.get(i)).addListenerForSingleValueEvent(new ValueEventListener() {
+            mFirebaseInstance = FirebaseDatabase.getInstance();
+            mFirebaseDatabase3=mFirebaseInstance.getReference("product").child(getIntent().getStringExtra("shop")).child(barcodelist.get(i));
+            mFirebaseDatabase3.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Product product1=dataSnapshot.getValue(Product.class);
-                    qtyleft=Integer.parseInt(product1.getQty());
-                    int qty=qtyleft-qtyneed;
-                    mFirebaseDatabase2 = mFirebaseInstance.getReference("product").child(getIntent().getStringExtra("shop")).child(barcodelist.get(pos));
-                    Map<String, Object> updates = new HashMap<>();
-                    updates.put("qty", String.valueOf(qty));
-                    mFirebaseDatabase2.updateChildren(updates);
+                    if (dataSnapshot.exists()){
+                        Product product1=dataSnapshot.getValue(Product.class);
+                        qtyleft=Integer.parseInt(product1.getQty());
+                        int qty=qtyleft-qtyneed;
+                        mFirebaseDatabase2 = mFirebaseInstance.getReference("product").child(getIntent().getStringExtra("shop")).child(barcodelist.get(pos));
+                        Map<String, Object> updates = new HashMap<>();
+                        updates.put("qty", String.valueOf(qty));
+                        mFirebaseDatabase2.updateChildren(updates);
+                    }
+                    else {
+                        Toast.makeText(PaymentActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                    Toast.makeText(PaymentActivity.this, "Data Error", Toast.LENGTH_SHORT).show();
                 }
+
             });
 
-            ordershop = mFirebaseInstance.getReference("onlineordershop").child(getIntent().getStringExtra("mobile")).child(getIntent().getStringExtra("shop"));
+            ordershop = mFirebaseInstance.getReference("onlineordershop").child(getIntent().getStringExtra("mobile")).child(getIntent().getStringExtra("shop")).child(barcodelist.get(i));
             myref2 = mFirebaseInstance.getReference("cart").child(getIntent().getStringExtra("mobile")).child(getIntent().getStringExtra("shop")).child(barcodelist.get(i));
 
             myref2.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -240,7 +258,7 @@ public class PaymentActivity extends Activity implements PaymentResultListener {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                    Toast.makeText(PaymentActivity.this, ""+databaseError, Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -258,6 +276,15 @@ public class PaymentActivity extends Activity implements PaymentResultListener {
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                /*Cart value = dataSnapshot.getValue(Cart.class);
+                Product product=new Product();
+                product.setBarcode("");
+                product.setCompany(value.getCompany());
+                product.setName(value.getName());
+                product.setPrice(value.getPrice());
+                product.setQty(value.getQuantity());
+                product.setShop("");*/
+
                 toPath.setValue(dataSnapshot.getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
